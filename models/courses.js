@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 var courseSchema = new Schema({
@@ -10,7 +10,8 @@ var courseSchema = new Schema({
   email: String,
   instituteDescription: String,
   available_course: [],
-  comment: []
+  comment: [],
+  reviews: String
 });
 
-module.exports = mongoose.model("courses", courseSchema);
+module.exports = mongoose.model('courses', courseSchema);

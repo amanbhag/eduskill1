@@ -1,0 +1,329 @@
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"> <a href="/">Home</a> </li>
+            <li class="breadcrumb-item active" aria-current="page"> Compare Institutes </li>
+        </ol>
+    </nav>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <form action="/searchToCompare" autocomplete="off" method="post">
+                <th class="bg-primary">Institute</th>
+                {{!-- Left Institute Details --}}
+                <td>
+                        <div class="autocomplete">
+                            <input id="instituteName" type="text" name="instituteName" placeholder="Search Institute" required>
+                        </div>
+                </td>
+
+                {{!-- Right Institute Details --}}
+                <td>
+                        <div class="autocomplete">
+                            <input id="instituteName2" type="text" name="instituteName2" placeholder="Search Institute" required>
+                        </div>
+                </td>
+                <td>
+                    <button type="submit" class="btn btn-success btn-sm">Compare</button>
+                    <a href="/compare"><button type="button" class="btn btn-primary btn-sm">Clear</button></a>
+                </td>
+                </form>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th class="bg-primary">Type</th>
+                {{!-- Left Institute Details --}}
+                {{#if Institute1}}
+                    {{#each Institute1}}
+                        <td> {{this.courseType}} </td>
+                    {{/each}}
+                {{else}}
+                <td> N/A </td>
+                {{/if}}
+                {{!-- Right Institute Details --}}
+                 {{#if Institute2}}
+                    {{#each Institute2}}
+                        <td> {{this.courseType}} </td>
+                    {{/each}}
+                {{else}}
+                <td> N/A </td>
+                {{/if}}
+            </tr>
+            <tr>
+                <th class="bg-primary">Courses</th>
+                {{!-- Left Institute Details --}}
+                {{#if Institute1}}
+                    {{#if available_course1}}
+                        <td> 
+                            {{#each available_course1}}
+                                    Course Name : {{this.subject}}  <br>
+                                    Course Fees : {{this.fee}} <br>
+                                    Course Timimng : {{this.time}} <br><br>
+                            {{/each}}
+                        </td>
+                    {{else}}
+                        <td> N/A </td>
+                    {{/if}}
+                {{else}}
+                <td> N/A </td>
+                {{/if}}
+                {{!-- Right Institute Details --}}
+                {{#if Institute2}}
+                    {{#if available_course2}}
+                        <td> 
+                            {{#each available_course2}}
+                                    Course Name : {{this.subject}}  <br>
+                                    Course Fees : {{this.fee}} <br>
+                                    Course Timimng : {{this.time}} <br><br>
+                            {{/each}}
+                        </td>
+                    {{else}}
+                        <td> N/A </td>
+                    {{/if}}
+                {{else}}
+                <td> N/A </td>
+                {{/if}}
+            </tr>
+
+            <tr>
+                <th class="bg-primary">Location</th>
+                {{!-- Left Institute Details --}}
+                {{#if Institute1}}
+                    {{#each Institute1}}
+                        <td> {{this.address}} </td>
+                    {{/each}}
+                {{else}}
+                <td> N/A </td>
+                {{/if}}
+                 {{!-- Right Institute Details --}}
+                {{#if Institute2}}
+                    {{#each Institute2}}
+                        <td> {{this.address}} </td>
+                    {{/each}}
+                {{else}}
+                <td> N/A </td>
+                {{/if}}
+            </tr>
+
+            <tr>
+                <th class="bg-primary">Contact</th>
+                {{!-- Left Institute Details --}}
+                {{#if Institute1}}
+                    {{#each Institute1}}
+                        <td> {{this.contact}} </td>
+                    {{/each}}
+                {{else}}
+                <td> N/A </td>
+                {{/if}}
+                {{!-- Right Institute Details --}}
+                {{#if Institute2}}
+                    {{#each Institute2}}
+                        <td> {{this.contact}} </td>
+                    {{/each}}
+                {{else}}
+                <td> N/A </td>
+                {{/if}}
+            </tr>
+
+            <tr>
+                <th class="bg-primary">Reviews</th>
+                {{!-- Left Insstitute Details --}}
+                {{#if Ins1review1}}
+                    <td>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                {{else if Ins1review2}}
+                    <td>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                {{else if Ins1review3}}
+                    <td>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                {{else if Ins1review4}}
+                    <td>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                {{else if Ins1review5}}
+                    <td>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </td>
+                {{else}}    
+                    <td> N/A </td>
+                {{/if}}
+                {{!-- Right Institute Details --}}
+                {{#if Ins2review1}}
+                    <td>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                {{else if Ins2review2}}
+                    <td>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                {{else if Ins2review3}}
+                    <td>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                {{else if Ins2review4}}
+                    <td>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star"></span>
+                    </td>
+                {{else if Ins2review5}}
+                    <td>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                        <span class="fa fa-star checked"></span>
+                    </td>
+                {{else}}    
+                    <td> N/A </td>
+                {{/if}}
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+
+
+{{!-- JavaScript for Inserting Elements in AutoComplete Fields --}}
+<script>
+    function autocomplete(inp, arr) {
+        /*the autocomplete function takes two arguments,
+        the text field element and an array of possible autocompleted values:*/
+        var currentFocus;
+        /*execute a function when someone writes in the text field:*/
+        inp.addEventListener("input", function (e) {
+            var a, b, i, val = this.value;
+            /*close any already open lists of autocompleted values*/
+            closeAllLists();
+            if (!val) { return false; }
+            currentFocus = -1;
+            /*create a DIV element that will contain the items (values):*/
+            a = document.createElement("DIV");
+            a.setAttribute("id", this.id + "autocomplete-list");
+            a.setAttribute("class", "autocomplete-items");
+            /*append the DIV element as a child of the autocomplete container:*/
+            this.parentNode.appendChild(a);
+            /*for each item in the array...*/
+            for (i = 0; i < arr.length; i++) {
+                /*check if the item starts with the same letters as the text field value:*/
+                if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
+                    /*create a DIV element for each matching element:*/
+                    b = document.createElement("DIV");
+                    /*make the matching letters bold:*/
+                    b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
+                    b.innerHTML += arr[i].substr(val.length);
+                    /*insert a input field that will hold the current array item's value:*/
+                    b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
+                    /*execute a function when someone clicks on the item value (DIV element):*/
+                    b.addEventListener("click", function (e) {
+                        /*insert the value for the autocomplete text field:*/
+                        inp.value = this.getElementsByTagName("input")[0].value;
+                        /*close the list of autocompleted values,
+                        (or any other open lists of autocompleted values:*/
+                        closeAllLists();
+                    });
+                    a.appendChild(b);
+                }
+            }
+        });
+        /*execute a function presses a key on the keyboard:*/
+        inp.addEventListener("keydown", function (e) {
+            var x = document.getElementById(this.id + "autocomplete-list");
+            if (x) x = x.getElementsByTagName("div");
+            if (e.keyCode == 40) {
+                /*If the arrow DOWN key is pressed,
+                increase the currentFocus variable:*/
+                currentFocus++;
+                /*and and make the current item more visible:*/
+                addActive(x);
+            } else if (e.keyCode == 38) { //up
+                /*If the arrow UP key is pressed,
+                decrease the currentFocus variable:*/
+                currentFocus--;
+                /*and and make the current item more visible:*/
+                addActive(x);
+            } else if (e.keyCode == 13) {
+                /*If the ENTER key is pressed, prevent the form from being submitted,*/
+                e.preventDefault();
+                if (currentFocus > -1) {
+                    /*and simulate a click on the "active" item:*/
+                    if (x) x[currentFocus].click();
+                }
+            }
+        });
+        function addActive(x) {
+            /*a function to classify an item as "active":*/
+            if (!x) return false;
+            /*start by removing the "active" class on all items:*/
+            removeActive(x);
+            if (currentFocus >= x.length) currentFocus = 0;
+            if (currentFocus < 0) currentFocus = (x.length - 1);
+            /*add class "autocomplete-active":*/
+            x[currentFocus].classList.add("autocomplete-active");
+        }
+        function removeActive(x) {
+            /*a function to remove the "active" class from all autocomplete items:*/
+            for (var i = 0; i < x.length; i++) {
+                x[i].classList.remove("autocomplete-active");
+            }
+        }
+        function closeAllLists(elmnt) {
+            /*close all autocomplete lists in the document,
+            except the one passed as an argument:*/
+            var x = document.getElementsByClassName("autocomplete-items");
+            for (var i = 0; i < x.length; i++) {
+                if (elmnt != x[i] && elmnt != inp) {
+                    x[i].parentNode.removeChild(x[i]);
+                }
+            }
+        }
+        /*execute a function when someone clicks in the document:*/
+        document.addEventListener("click", function (e) {
+            closeAllLists(e.target);
+        });
+    }
+    /*An array containing all the country names in the world:*/
+    var allCoursesNameInArray = [{{#each array}}'{{this.name}}',{{/each}}];
+    autocomplete(document.getElementById("instituteName"), allCoursesNameInArray);
+    autocomplete(document.getElementById("instituteName2"), allCoursesNameInArray);
+</script>
