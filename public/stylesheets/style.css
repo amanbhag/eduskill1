@@ -3,6 +3,9 @@
   border: 0;
   font-family: Poppins;
 }
+.checked {
+  color: orange;
+}
 
 .navbar-brand {
   font-size: 20px !important;
@@ -48,7 +51,7 @@ body {
 
 #block .comfort {
   height: 500px;
-  background-image: url("/images/child.jpeg");
+  background-image: url('/images/child.jpeg');
   border-radius: 50px;
   background-position: center;
   background-size: cover;
@@ -65,7 +68,7 @@ body {
 
 #block .time {
   height: 500px;
-  background-image: url("/images/child.jpeg");
+  background-image: url('/images/child.jpeg');
   border-radius: 50px;
   background-position: center;
   background-size: cover;
@@ -75,7 +78,7 @@ body {
 
 #block .experts {
   height: 500px;
-  background-image: url("/images/child.jpeg");
+  background-image: url('/images/child.jpeg');
   border-radius: 50px;
   background-position: center;
   background-size: cover;
@@ -235,7 +238,7 @@ footer {
 }
 
 .user_background {
-  background: url("/images/user_background.jpg");
+  background: url('/images/user_background.jpg');
   height: 650px;
   background-size: cover;
   background-position: center;
@@ -244,7 +247,7 @@ footer {
 
 /* All Forms CSS Starts Here */
 
-form {
+.formCss {
   padding: 30px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   border-radius: 10px;
@@ -380,7 +383,7 @@ form {
   display: flex;
   justify-content: center;
   align-content: center;
-  background: url("/images/search.jpg");
+  background: url('/images/search.jpg');
   background-size: cover;
   background-repeat: none;
   background-attachment: fixed;
@@ -495,7 +498,7 @@ form {
   font-weight: bold;
   width: 99%;
   margin-left: 1%;
-  background: url("/images/course_contact.jpg");
+  background: url('/images/course_contact.jpg');
   background-attachment: fixed;
   border-radius: 30px;
   background-size: cover;
